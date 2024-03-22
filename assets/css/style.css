@@ -6,6 +6,10 @@
     font-weight: 300;
 }
 
+a {
+    text-decoration: none;
+}
+
 header {
     position: fixed;
     right: 0;
@@ -81,9 +85,25 @@ section {
     margin: 0 0 45px;
 }
 
+.hero-text h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
 .hero-text h4 {
     font-size: 18px;
     font-weight: 600;
     color: white;
     margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
 }

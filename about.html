@@ -38,7 +38,7 @@
                 doloribus nisi consectetur quia placeat!</p>
         </div>
 
-        <div>
+        <div class="jobs">
             <h3>Työkokemus</h3>
             <div>Lorem, ipsum dolor sit amet 
                 consectetur adipisicing elit. Obcaecati perspiciatis quam 
@@ -49,41 +49,76 @@
                 doloribus accusantium dicta quas.</div>
         </div>
 
-        <div>
+        <div class="school">
             <h3>Koulutus</h3>
             <div>Media-alan toteuttaja, peliala</div>
             <div>Venäjän kielen ja kirjallisuuten opettaja</div>
         </div>
 
-        <div>
+        <div class="courses">
             <h3>Kurssit</h3>
             <div>Ohjelmoinnistako minulle ammatti?</div>
             <div>Hyvinvointiteknologian mahdollisuudet</div>
             <div>Yrittäjyyskurssi</div>
         </div>
 
-        <div>
-            <h4>Kielitaito</h4>
+        <div class="lang">
+            <h3>Kielitaito</h3>
             <div>Suomi hyvä</div>
             <div>Englantti hyvä</div>
             <div>Venäjä äidinkieli</div>
         </div>
 
-        <div>
+        <div class="skillset">
             <h3>IT-Taidot</h3>
 
-            <div><i class="ri-html5-line"></i> HTML5</div>
-            <div><i class="ri-css3-line"></i>CSS3</div>
-            <div><i class="ri-reactjs-line">React JS</i></div>
-            <div><i class="ri-javascript-line"></i>JavaScript</div>
-            <div><i class="ri-nodejs-line"></i>NodeJS</div>
-            <div><i class="ri-github-line"></i>Github</div>
-            <div><i class="ri-git-fork-line"></i>Git</div>
-            <div><i class='bx bxl-adobe'></i>Photoshop</div>
-            <div><i class='bx bxl-figma'></i>Figma</div>
+            <p class="wide"><i class="ri-html5-line"></i> HTML5</p>
+            <div class="back skillbar clearfix" data-percent="50%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">70%</div>
+            </div>
+
+            <p class="wide"><i class="ri-css3-line"></i> CSS3</p>
+            <div class="back skillbar clearfix" data-percent="50%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">70%</div>
+            </div>
+
+            <p class="wide"><i class="ri-reactjs-line"></i> React JS</p>
+            <div class="back skillbar clearfix" data-percent="50%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">60%</div>
+            </div>
+
+            <p class="wide"><i class="ri-javascript-line"></i> JavaScript</p>
+            <div class="back skillbar clearfix" data-percent="55%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">55%</div>
+            </div>
+
+            <p class="wide"><i class="ri-nodejs-line"></i>NodeJS</p>
+            <div class="back skillbar clearfix" data-percent="40%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">40%</div>
+            </div>
+
+            <p class="wide"><i class="ri-github-line"></i>GitHub</p>
+            <div class="back skillbar clearfix" data-percent="80%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">80%</div>
+            </div>
+
+            <p class="wide"><i class="ri-git-fork-line"></i>Git</p>
+            <div class="back skillbar clearfix" data-percent="80%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">80%</div>
+            </div>
+
+            <p class="wide"><i class='bx bxl-adobe'></i>Photoshop</p>
+            <div class="back skillbar clearfix" data-percent="70%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">70%</div>
+            </div>
+
+            <p class="wide"><i class='bx bxl-figma'></i>Figma</p>
+            <div class="back skillbar clearfix" data-percent="30%">
+                <div class="skill skillbar-bar" style="height: 28px; width: 0%;">30%</div>
+            </div>
         </div>
 
-        <div>
+        <div class="hobbies">
             <h3>Harrastukset</h3>
             <div>Piirtääminen</div>
             <div>Voimanosto</div>
@@ -91,10 +126,18 @@
             <div>Valokuvaus</div>
         </div>
         
-        <div>
+        <div class="recom">
             <h3>Suosittelijat</h3>
         </div>
 
     </section>
+
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('.skillbar').each(function() {
+                jQuery(this).find('.skillbar-bar').animate({width: jQuery(this).attr('data-percent')}, 3000);
+            });
+        });
+    </script>
 </body>
 </html>

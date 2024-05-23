@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Player 1</title>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #4C4C6D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.music-player {
+    background: #1B9C85;
+    width: 400px;
+    padding: 25px 35px;
+    text-align: center;
+    border-radius: 5%;
+    box-shadow: rgba(26, 5, 55, 0.5);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+nav .circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 53px;
+    background: #4C4C6D;
+    color: #E8F6EF;
+    box-shadow: 0 5px 10px rgba(10, 62, 47, 0.34);
+}
+.song-img {
+    width: 270px;
+    border-radius: 50%;
+    border: 4px solid #4C4C6D;
+    box-shadow: 0 10px 60px rgba(10, 62, 47, 0.34);
+    animation: rotation 6s infinite linear;
+}
+@keyframes rotation {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+}
+.music-player h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #E8F6EF;
+    margin-top: 20px;
+}
+.music-player p {
+    font-size: 14px;
+    color: #E8F6EF;
+}
+#progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #4C4C6D;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #4C4C6D;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 6px solid #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls div {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: #4C4C6D;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+    cursor: pointer;
+    line-height: 75px;
+}
+
+.play {
+    transform: scale(1.5);
+
+}
+.play .material-symbols-outlined {
+    transform: scale(1.5);
+    color: #FFE194;
+
+}
+
+.volume {
+    margin: 20px;
+    display: inline;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50%;
+    color: #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+    cursor: pointer;
+}
+.track {
+    display: none;
+}
+
+#volume {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 6px;
+    background: #FFE194;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #FFE194;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 6px solid #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+}
+    </style>
+
+    </head>
+    <body>
+    <div class="container">
+        <div class="music-player">
+        <nav>
+            <div class="circle">
+            <span class="material-symbols-outlined"> chevron_left </span>
+            </div>
+            <div class="circle">
+            <span class="material-symbols-outlined"> density_medium </span>
+            </div>
+        </nav>
+        <img src="./1.jpg" alt="thumbnail" class="song-img" />
+        <h1>Title</h1>
+        <p>Artist</p>
+
+        <audio class="track" controls id="song">
+            <source src="./music2.mp3" type="audio/mpeg" />
+        </audio>
+
+        <input type="range" value="0" id="progress" oninput="seekSong()" />
+        <div class="volume">
+            <span class="material-symbols-outlined"> volume_off </span>
+        </div>
+
+        <input type="range" value="100" id="volume" />
+
+        <div class="volume">
+            <span class="material-symbols-outlined"> volume_up </span>
+        </div>
+
+        <div class="controls">
+            <div class="a-left">
+            <span class="material-symbols-outlined" onclick="previousTrack()">
+                keyboard_double_arrow_left
+            </span>
+            </div>
+            <div onclick="playPause()" class="play">
+            <span class="material-symbols-outlined" id="ctrlIcon">
+                play_circle
+            </span>
+            </div>
+
+            <div class="a-right">
+            <span class="material-symbols-outlined" onclick="nextTrack()">
+                keyboard_double_arrow_right
+            </span>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("song");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+        let volumeSlider = document.getElementById("volume");
+        let currentTrackIndex = 0; 
+
+        const tracks = [
+    { title: "Song 1", artist: "Artist 1", src: "./music1.mp3" },
+    { title: "Song 2", artist: "Artist 2", src: "./music2.mp3" },
+  // Add more track objects as needed
+];
+
+function loadTrack(index) {
+    song.src = tracks[index].src;
+    song.play();
+    document.querySelector("h1").textContent = tracks[index].title;
+    document.querySelector("p").textContent = tracks[index].artist;
+    ctrlIcon.textContent = "pause_circle";
+}
+
+function nextTrack() {
+    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+    loadTrack(currentTrackIndex);
+}
+
+function previousTrack() {
+    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+    loadTrack(currentTrackIndex);
+}
+
+      // Add the 'input' event listener to the volume slider
+        volumeSlider.addEventListener("input", function () {
+        song.volume = volumeSlider.value / 100;
+        });
+
+        song.onloadedmetadata = function () {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+        };
+
+      // Add the 'timeupdate' event listener to update the slider
+        song.ontimeupdate = function () {
+        progress.value = song.currentTime;
+        };
+
+        function playPause() {
+        if (song.paused) {
+            song.play();
+            ctrlIcon.textContent = "pause_circle";
+        } else {
+            song.pause();
+            ctrlIcon.textContent = "play_circle";
+        }
+        }
+    </script>
+    </body>
+</html>

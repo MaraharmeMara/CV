@@ -1,288 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <title>Player 1</title>
 
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-    .container {
+      .container {
         width: 100%;
         height: 100vh;
-        background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.35%, #133917 75.52%);;
+        background: linear-gradient(
+          245.59deg,
+          #4d9559 0%,
+          #38703d 28.35%,
+          #133917 75.52%
+        );
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-    }
+      }
 
-    .music-player {
-        background: #1B9C85;
+      .music-player {
+        background: #1b9c85;
         width: 400px;
         padding: 25px 35px;
         text-align: center;
-    }
-    nav {
+      }
+      nav {
         display: flex;
         justify-content: space-between;
         margin: 15px;
-    }
-    nav .circle {
+      }
+      nav .circle {
         border-radius: 50%;
         width: 40px;
         height: 40px;
         line-height: 53px;
-        background: #4C4C6D;
-        color: #E8F6EF;
+        background: #4c4c6d;
+        color: #e8f6ef;
         box-shadow: 0 5px 10px rgba(10, 62, 47, 0.34);
-    }
-    .song-img {
+      }
+      .song-img {
         width: 270px;
         border-radius: 50%;
-        border: 4px solid #4C4C6D;
+        border: 4px solid #4c4c6d;
         box-shadow: 0 10px 60px rgba(10, 62, 47, 0.34);
         animation: rotation 6s infinite linear;
-    }
-    @keyframes rotation {
+      }
+      @keyframes rotation {
         from {
-        transform: rotate(0deg);
+          transform: rotate(0deg);
         }
         to {
-        transform: rotate(360deg);
+          transform: rotate(360deg);
         }
-    }
-    .music-player h1 {
+      }
+      .music-player h1 {
         font-size: 20px;
         font-weight: 400;
-        color: #E8F6EF;
+        color: #e8f6ef;
         margin-top: 20px;
-    }
-    .music-player p {
+      }
+      .music-player p {
         font-size: 14px;
-        color: #E8F6EF;
-    }
-    #progress {
+        color: #e8f6ef;
+      }
+      #progress {
         -webkit-appearance: none;
         width: 100%;
         height: 6px;
-        background: #4C4C6D;
+        background: #4c4c6d;
         border-radius: 4px;
         cursor: pointer;
         margin: 40px 0;
-    }
-    #progress::-webkit-slider-thumb {
+      }
+      #progress::-webkit-slider-thumb {
         -webkit-appearance: none;
-        background: #4C4C6D;
+        background: #4c4c6d;
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        border: 6px solid #E8F6EF;
+        border: 6px solid #e8f6ef;
         box-shadow: rgba(26, 5, 55, 0.5);
-    }
-    .controls {
+      }
+      .controls {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .controls div {
+      }
+      .controls div {
         width: 60px;
         height: 60px;
         margin: 20px;
-        background: #4C4C6D;
+        background: #4c4c6d;
         display: inline;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        color: #E8F6EF;
+        color: #e8f6ef;
         box-shadow: rgba(26, 5, 55, 0.5);
         cursor: pointer;
         line-height: 75px;
-    }
+      }
 
-    .play {
+      .play {
         transform: scale(1.5);
-
-    }
-    .play .material-symbols-outlined {
+      }
+      .play .material-symbols-outlined {
         transform: scale(1.5);
-        color: #FFE194;
+        color: #ffe194;
+      }
 
-    }
-
-    .volume {
+      .volume {
         margin: 20px;
         display: inline;
         justify-content: space-between;
         align-items: center;
         border-radius: 50%;
-        color: #E8F6EF;
+        color: #e8f6ef;
         box-shadow: rgba(26, 5, 55, 0.5);
         cursor: pointer;
-    }
-    .track {
+      }
+      .track {
         display: none;
-    }
+      }
 
-    #volume {
+      #volume {
         -webkit-appearance: none;
         width: 50%;
         height: 6px;
-        background: #FFE194;
+        background: #ffe194;
         border-radius: 4px;
         cursor: pointer;
         margin: 40px 0;
-    }
-    #volume::-webkit-slider-thumb {
+      }
+      #volume::-webkit-slider-thumb {
         -webkit-appearance: none;
-        background: #FFE194;
+        background: #ffe194;
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        border: 6px solid #E8F6EF;
+        border: 6px solid #e8f6ef;
         box-shadow: rgba(26, 5, 55, 0.5);
-    }
-    .b-btn {
+      }
+      .b-btn {
         position: fixed;
         left: 10px;
         top: 20px;
         width: 70px;
         height: 40px;
         color: white;
-        background-color: #1B9C85;
+        background-color: #1b9c85;
         border: #133917 solid 1px;
         border-radius: 1em;
         cursor: pointer;
-    }
-    .b-btn:hover {
+      }
+      .b-btn:hover {
         background-color: #0c5e4f;
-    }
+      }
     </style>
-
-    </head>
-    <body>
+  </head>
+  <body>
     <div class="container">
-        <button class="b-btn" id="back">Back</button>
-        <div class="music-player">
+      <button class="b-btn" id="back">Back</button>
+      <div class="music-player">
         <nav>
-            <div class="circle">
+          <div class="circle">
             <span class="material-symbols-outlined"> favorite </span>
-            </div>
-            <div class="circle">
+          </div>
+          <div class="circle">
             <span class="material-symbols-outlined"> density_medium </span>
-            </div> 
+          </div>
         </nav>
 
         <img src="./1.jpg" alt="thumbnail" class="song-img" />
         <h1>Title</h1>
         <p>Artist</p>
 
-        <audio class="track" controls id="song">
-            <source src="./music2.mp3" type="audio/mpeg" />
-        </audio>
+        <script>
+          let musicPlayer = document.querySelector(".music-player");
+          let song = document.createElement("audio");
+          song.onloadedmetadata = function () {
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+          };
+          song.src = "./music2.mp3";
+          song.type = "audio/mpeg";
+          musicPlayer.appendChild(song);
+        </script>
 
         <input type="range" value="0" id="progress" oninput="seekSong()" />
         <div class="volume">
-            <span class="material-symbols-outlined"> volume_off </span>
+          <span class="material-symbols-outlined"> volume_off </span>
         </div>
 
         <input type="range" value="100" id="volume" />
 
         <div class="volume">
-            <span class="material-symbols-outlined"> volume_up </span>
+          <span class="material-symbols-outlined"> volume_up </span>
         </div>
 
         <div class="controls">
-            <div class="a-left">
+          <div class="a-left">
             <span class="material-symbols-outlined" onclick="previousTrack()">
-                keyboard_double_arrow_left
+              keyboard_double_arrow_left
             </span>
-            </div>
-            <div onclick="playPause()" class="play">
+          </div>
+          <div onclick="playPause()" class="play">
             <span class="material-symbols-outlined" id="ctrlIcon">
-                play_circle
+              play_circle
             </span>
-            </div>
+          </div>
 
-            <div class="a-right">
+          <div class="a-right">
             <span class="material-symbols-outlined" onclick="nextTrack()">
-                keyboard_double_arrow_right
+              keyboard_double_arrow_right
             </span>
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
 
     <script>
-        let progress = document.getElementById("progress");
-        let song = document.getElementById("song");
-        let ctrlIcon = document.getElementById("ctrlIcon");
-        let volumeSlider = document.getElementById("volume");
-        let currentTrackIndex = 0; 
+      let progress = document.getElementById("progress");
+      let ctrlIcon = document.getElementById("ctrlIcon");
+      let volumeSlider = document.getElementById("volume");
+      let currentTrackIndex = 0;
 
-        const tracks = [
-    { title: "Song 1", artist: "Artist 1", src: "./music1.mp3" },
-    { title: "Song 2", artist: "Artist 2", src: "./music2.mp3" },
-  // Add more track objects as needed
-];
+      const tracks = [
+        { title: "Song 1", artist: "Artist 1", src: "./music1.mp3" },
+        { title: "Song 2", artist: "Artist 2", src: "./music2.mp3" },
+        // Add more track objects as needed
+      ];
 
-function loadTrack(index) {
-    song.src = tracks[index].src;
-    song.play();
-    document.querySelector("h1").textContent = tracks[index].title;
-    document.querySelector("p").textContent = tracks[index].artist;
-    ctrlIcon.textContent = "pause_circle";
-}
+      function seekSong() {
+        song.currentTime = progress.value;
+      }
 
-function nextTrack() {
-    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-    loadTrack(currentTrackIndex);
-}
+      function loadTrack(index) {
+        song.src = tracks[index].src;
+        song.play();
+        document.querySelector("h1").textContent = tracks[index].title;
+        document.querySelector("p").textContent = tracks[index].artist;
+        ctrlIcon.textContent = "pause_circle";
+      }
 
-function previousTrack() {
-    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-    loadTrack(currentTrackIndex);
-}
+      function nextTrack() {
+        currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+        loadTrack(currentTrackIndex);
+      }
+
+      function previousTrack() {
+        currentTrackIndex =
+          (currentTrackIndex - 1 + tracks.length) % tracks.length;
+        loadTrack(currentTrackIndex);
+      }
 
       // Add the 'input' event listener to the volume slider
-        volumeSlider.addEventListener("input", function () {
+      volumeSlider.addEventListener("input", function () {
         song.volume = volumeSlider.value / 100;
-        });
-
-        song.onloadedmetadata = function () {
-        progress.max = song.duration;
-        progress.value = song.currentTime;
-        };
+      });
 
       // Add the 'timeupdate' event listener to update the slider
-        song.ontimeupdate = function () {
+      song.ontimeupdate = function () {
         progress.value = song.currentTime;
-        };
+      };
 
-        function playPause() {
+      function playPause() {
         if (song.paused) {
-            song.play();
-            ctrlIcon.textContent = "pause_circle";
+          song.play();
+          ctrlIcon.textContent = "pause_circle";
         } else {
-            song.pause();
-            ctrlIcon.textContent = "play_circle";
+          song.pause();
+          ctrlIcon.textContent = "play_circle";
         }
-        }
+      }
 
-        document.getElementById('back') 
-		.addEventListener('click',function() { 
-			history.back(); 
-		}) 
+      document.getElementById("back").addEventListener("click", function () {
+        history.back();
+      });
     </script>
-    </body>
+  </body>
 </html>

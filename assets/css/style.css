@@ -1,174 +1,182 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "filson-pro", sans-serif;
-    font-weight: 300;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "filson-pro", sans-serif;
+  font-weight: 300;
 }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 header {
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 33px 9%;
-    background: transparent;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 33px 9%;
+  background: transparent;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: 700;
-    color: white;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
 }
 
 .navlist {
-    display: flex;
-    text-decoration: none;
+  display: flex;
+  text-decoration: none;
 }
 
 .navlist a {
-    color: white;
-    margin-left: 60px;
-    font-size: 15px;
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
-    transition: all .55s ease;
+  color: white;
+  margin-left: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.55s ease;
 }
 
 .navlist a:hover {
-    border-bottom: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
 #menu-icon {
-    color: white;
-    font-size: 35px;
-    z-index: 10001;
-    cursor: pointer;
+  color: white;
+  font-size: 35px;
+  z-index: 10001;
+  cursor: pointer;
 }
 
 .hero {
-    height: 100%;
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.35%, #133917 75.52%);
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 2rem;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    245.59deg,
+    #4d9559 0%,
+    #38703d 28.35%,
+    #133917 75.52%
+  );
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
 }
 
+a:visited {
+  color: white;
+}
 section {
-    padding: 19% 19%;
-    color: white;
+  padding: 19% 19%;
+  color: white;
 }
 
 .hero-text h5 {
-    font-size: 14px;
-    font-weight: 400;
-    color: white;
-    margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .hero-text h1 {
-    font-family: "reed", sans-serif;
-    font-size: 90px;
-    line-height: 1;
-    color: white;
-    margin: 0 0 45px;
+  font-family: "reed", sans-serif;
+  font-size: 90px;
+  line-height: 1;
+  color: white;
+  margin: 0 0 45px;
 }
 
 .hero-text h2 {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1;
-    color: white;
-    margin-bottom: 10px;
-    text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  color: white;
+  margin-bottom: 10px;
+  text-decoration: none;
 }
 
 .hero-text h4 {
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .hero-text p {
-    color: white;
-    font-size: 15px;
-    line-height: 1.9;
-    margin-bottom: 40px;
+  color: white;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 40px;
 }
 
 .skill {
-    background: linear-gradient(90deg, #81EBF5 0%, #31B1CF) 100%;
-    text-align: right;
-    padding-right: 30px;
-    line-height: 30px;
-    border-radius: 0 20px 20px 0;
+  background: linear-gradient(90deg, #81ebf5 0%, #31b1cf) 100%;
+  text-align: right;
+  padding-right: 30px;
+  line-height: 30px;
+  border-radius: 0 20px 20px 0;
 }
 
 .back {
-    background: lightblue;
+  background: lightblue;
 }
 
 p {
-    color: white;
+  color: white;
 }
-
 
 h3 {
-    color: white;
-    font-size: 30px;
+  color: white;
+  font-size: 30px;
 }
 .j-desc {
-    margin: 20px;
-    padding: 20px;
-    margin-left: 0;
-    padding-left: 0;
+  margin: 20px;
+  padding: 20px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .gallery {
-    width: 400px;
+  width: 400px;
 }
 
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+input[type="text"],
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
 .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    color: #133917;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  color: #133917;
 }
-
